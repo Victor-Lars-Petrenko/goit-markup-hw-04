@@ -178,7 +178,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 188px 0;
-    min-width: 1440px;
+    max-width: 1440px;
 }
 
 .hero-title {
@@ -308,8 +308,8 @@ img {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.item-team:hover .member-social-item,
-.item-team:focus .member-social-item {
+.item-team:hover .member-social-link,
+.item-team:focus .member-social-link {
     background-color: var(--ocean);
 }
 
@@ -335,13 +335,13 @@ img {
 }
 
 .member-social-item {
-    background-color: var(--iris);
-    border-radius: 50%;
     width: 40px;
     height: 40px;
 }
 
 .member-social-link{
+        background-color: var(--iris);
+        border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -366,6 +366,7 @@ img {
     width: calc((100% - 5 * 24px) / 6);
     border-radius: 4px;
     border: 1px solid var(--lightslate);
+    height: 88px;
 }
 
 .customer-link {
@@ -378,7 +379,7 @@ img {
 }
 
 .customer-icon {
-    fill: var(--lightslate);
+    fill: currentColor;
     transition-property: fill;
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -462,8 +463,11 @@ img {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-item:hover .footer-social-link,
-.footer-social-item:focus .footer-social-link {
+.footer-social-link:hover {
+    background-color: var(--green);
+}
+
+.footer-social-link:focus {
     background-color: var(--green);
 }
 
@@ -534,8 +538,13 @@ img {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-card:hover .portfolio-card-link,
-.portfolio-card:focus .portfolio-card-link {
+.portfolio-card-link:hover {
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-card-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
