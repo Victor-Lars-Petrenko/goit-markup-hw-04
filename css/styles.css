@@ -303,16 +303,7 @@ img {
     border-radius: 0px 0px 4px 4px;
     width: calc((100% - 3 * 24px) / 4);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.item-team:hover .member-social-link,
-.item-team:focus .member-social-link {
-    background-color: var(--ocean);
-}
-
 
 .member-description {
     padding: 32px 0;
@@ -340,13 +331,22 @@ img {
 }
 
 .member-social-link{
-        background-color: var(--iris);
-        border-radius: 50%;
+    background-color: var(--iris);
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-team:hover .member-social-link {
+    background-color: var(--ocean);
+}
+
+.item-team:focus .member-social-link {
+    background-color: var(--ocean);
 }
 
 .member-social-icon{
@@ -364,8 +364,6 @@ img {
 
 .customer-item {
     width: calc((100% - 5 * 24px) / 6);
-    border-radius: 4px;
-    border: 1px solid var(--lightslate);
     height: 88px;
 }
 
@@ -373,31 +371,26 @@ img {
     width: 100%;
     height: 100%;
     padding: 16px 32px;
-    transition-property: box-shadow;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--lightslate);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--lightslate);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon {
     fill: currentColor;
-    transition-property: fill;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customer-item:hover .customer-link,
-.customer-item:focus .customer-link {
+.customer-link:hover,
+.customer-link:focus {
+    border-color: var(--ocean);
+    color: var(--ocean);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.customer-item:hover,
-.customer-item:focus {
-    border: 1px solid var(--ocean);
-}
-
-.customer-item:hover .customer-icon,
-.customer-item:focus .customer-icon {
-    fill: var(--ocean);
 }
 
 .page-footer {
@@ -489,9 +482,9 @@ img {
     letter-spacing: 0.04em;
     cursor: pointer;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn:hover,
@@ -539,15 +532,15 @@ img {
 }
 
 .portfolio-card-link:hover {
-        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-card-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-card:hover .card-text,
@@ -562,27 +555,25 @@ img {
     overflow: hidden;
 }
 
-.overlay {
+.overlay-text {
+    color: var(--cloud);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     position: absolute;
-    background: var(--iris);
     top: 0;
     width: 100%;
     height: 100%;
     padding: 40px 32px;
     transform: translateY(100%);
-    transition-property: transform;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--iris);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.overlay-text {
-    color: var(--cloud);
-        line-height: 1.5;
-        letter-spacing: 0.02em;
+.portfolio-card-link:hover .overlay-text {
+    transform: translateY(0%);
 }
 
-.portfolio-card-link:hover .overlay,
-.portfolio-card-link:focus .overlay {
+.portfolio-card-link:focus .overlay-text {
     transform: translateY(0%);
 }
 
